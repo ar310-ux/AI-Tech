@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form / Forge | Your weekly training plan</title>
+  <meta name="description" content="Build a practical workout guide around your goals, schedule, and equipment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Form Forge home"><span class="brand-mark">F</span><span>form <b>/</b> forge</span></a>
+    <div class="header-note"><span class="status-dot"></span> built for your next session</div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Personal training, simplified</p>
+        <h1 id="hero-title">Make your goal<br><em>the plan.</em></h1>
+        <p class="hero-intro">Tell us where you want to go. We’ll map the work between here and there.</p>
+      </div>
+      <div class="hero-stamp" aria-hidden="true"><span>01</span><i></i><span>WEEKLY<br>GUIDE</span></div>
+    </section>
+
+    <section class="workspace" aria-label="Workout guide builder">
+      <form class="builder-panel" id="planner-form">
+        <div class="panel-heading"><span class="step-label">01 / your starting point</span><span class="panel-rule"></span></div>
+        <h2>What are we training for?</h2>
+        <p class="field-hint">Choose the outcome that matters most right now.</p>
+        <div class="goal-grid" role="radiogroup" aria-label="Primary goal">
+          <label class="goal-option selected"><input type="radio" name="goal" value="strength" checked><span class="goal-icon">↗</span><strong>Build strength</strong><small>Get stronger, one rep at a time.</small></label>
+          <label class="goal-option"><input type="radio" name="goal" value="fitness"><span class="goal-icon">◒</span><strong>Improve fitness</strong><small>Move better for longer.</small></label>
+          <label class="goal-option"><input type="radio" name="goal" value="muscle"><span class="goal-icon">✦</span><strong>Build muscle</strong><small>More volume, steady progress.</small></label>
+          <label class="goal-option"><input type="radio" name="goal" value="energy"><span class="goal-icon">⌁</span><strong>More energy</strong><small>Feel good in your body.</small></label>
+        </div>
+
+        <div class="form-divider"></div>
+        <div class="panel-heading"><span class="step-label">02 / make it yours</span><span class="panel-rule"></span></div>
+        <div class="field-row">
+          <label class="field"><span>Experience</span><select id="experience"><option value="beginner">Just getting started</option><option value="intermediate" selected>I've got the basics</option><option value="advanced">Ready for a challenge</option></select></label>
+          <label class="field"><span>Days per week</span><select id="days"><option value="2">2 days</option><option value="3" selected>3 days</option><option value="4">4 days</option><option value="5">5 days</option></select></label>
+        </div>
+        <fieldset class="equipment-field"><legend>Available equipment</legend><div class="chip-list"><label class="chip"><input type="checkbox" name="equipment" value="bodyweight" checked><span>Bodyweight</span></label><label class="chip"><input type="checkbox" name="equipment" value="dumbbells" checked><span>Dumbbells</span></label><label class="chip"><input type="checkbox" name="equipment" value="bands"><span>Resistance bands</span></label><label class="chip"><input type="checkbox" name="equipment" value="gym"><span>Full gym</span></label></div></fieldset>
+        <label class="field focus-field"><span>Anything to focus on? <small>optional</small></span><input id="focus" type="text" placeholder="e.g. core, posture, running"></label>
+        <button class="generate-button" type="submit"><span>Forge my guide</span><b>→</b></button>
+        <p class="form-footnote">Your plan is a starting point, not a rulebook. Listen to your body.</p>
+      </form>
+
+      <section class="guide-panel" id="guide-panel" aria-live="polite" aria-label="Your generated workout guide">
+        <div class="guide-empty" id="guide-empty"><div class="empty-glyph">+</div><p>Your guide will<br><em>take shape here.</em></p><span>Fill in the details to get a week built around you.</span></div>
+        <div class="guide-content hidden" id="guide-content">
+          <div class="guide-topline"><span class="step-label">your guide / week one</span><span class="guide-meta" id="guide-meta">3 sessions · 45 min</span></div>
+          <div class="guide-title-row"><div><h2 id="guide-title">Strong foundations</h2><p id="guide-description">A balanced week to build confidence and capacity.</p></div><button class="icon-button" id="reset-button" type="button" title="Start over" aria-label="Start over">↻</button></div>
+          <div class="week-list" id="week-list"></div>
+          <div class="guide-note"><span>✦</span><p><strong>One useful rule</strong><br>Leave 2 good reps in the tank on every set this week. Consistency beats a heroic Monday.</p></div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer><span>FORM / FORGE</span><span>TRAIN WITH INTENTION</span><span>© 2024</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
